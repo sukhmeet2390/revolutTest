@@ -40,6 +40,4 @@ public class AddBalanceRequest implements Request {
             throw new ClientException(errors.toString());
         }
     }
-
-
 }

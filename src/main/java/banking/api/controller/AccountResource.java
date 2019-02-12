@@ -7,6 +7,7 @@ import javax.ws.rs.core.Response;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
 @Path("/accounts")
+@Consumes(APPLICATION_JSON)
 @Produces(APPLICATION_JSON)
 public interface AccountResource {
     @GET

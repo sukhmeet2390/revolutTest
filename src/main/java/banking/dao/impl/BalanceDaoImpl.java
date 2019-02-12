@@ -22,12 +22,11 @@ import static banking.api.dto.response.Transaction.TransactionType.DEBIT;
 @Singleton
 public class BalanceDaoImpl implements BalanceDao {
     public static final Integer USER_MAP_SIZE_DEFAULT = 1000; // configurable
-
     //short circuiting database here
     private Map<Long, List<TransactionDO>> statementMap = new ConcurrentHashMap<>(USER_MAP_SIZE_DEFAULT);
     private Map<Long, BalanceDO> balanceMap = new ConcurrentHashMap<>(USER_MAP_SIZE_DEFAULT);
-    //used to simulate row level locks in db like MySQl
-    private Map<Long, Object> lockMap = new ConcurrentHashMap<>(USER_MAP_SIZE_DEFAULT);
+
+    private Map<Long, Object> lockMap = new ConcurrentHashMap<>(USER_MAP_SIZE_DEFAULT); //used to simulate row level locks in db like MySQl
 
 
     @Override
@@ -123,7 +122,7 @@ public class BalanceDaoImpl implements BalanceDao {
         Double fromTotalAmount, toTotalAmount;
 
         if (!fromUser.equals(toUser)) {//else deadlock
-            //lock both user balance, deadlock free manner
+            //lock both user balance, deadlock free ordered manner
             Long min = fromUser.id.compareTo(toUser.id) > 0 ? fromUser.id : toUser.id;
             Long max = fromUser.id.compareTo(toUser.id) < 0 ? fromUser.id : toUser.id;
             synchronized (lockMap.get(min)) {

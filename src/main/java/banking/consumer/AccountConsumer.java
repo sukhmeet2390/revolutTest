@@ -54,7 +54,7 @@ public class AccountConsumer {
     }
 
     public Balance addBalance(Long userId, Double amount) {
-        logger.info("Received request to addBalance for user: {}", userId); // hide acc data
+        logger.info("Received request to addBalance for user: {}", userId);
         Profile profile = profileConsumer.getUserById(userId);
         addTransaction(
                 userId,

@@ -13,7 +13,6 @@ import javax.ws.rs.core.Response;
 
 @Singleton
 public class TransactionResourceImpl implements TransactionResource {
-
     private final AccountConsumer accountConsumer;
 
     @Inject

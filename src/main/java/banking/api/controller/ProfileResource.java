@@ -9,8 +9,8 @@ import javax.ws.rs.core.Response;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
 @Path("/profiles")
+@Consumes(APPLICATION_JSON)
 @Produces(APPLICATION_JSON)
-
 public interface ProfileResource {
     @GET
     @Path("/{id}")

@@ -2,12 +2,14 @@ package banking.api.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.validation.constraints.NotNull;
 
 
 @ToString
+@EqualsAndHashCode
 public class PublicProfile implements Response {
     @NotNull
     public final Name name;

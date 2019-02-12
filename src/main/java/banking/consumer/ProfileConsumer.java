@@ -15,7 +15,6 @@ public class ProfileConsumer {
     private final ProfileDaoImpl profileDao;
     private final Logger logger = LoggerFactory.getLogger(ProfileConsumer.class);
 
-
     @Inject
     public ProfileConsumer(ProfileDaoImpl profileDao) {
         this.profileDao = profileDao;

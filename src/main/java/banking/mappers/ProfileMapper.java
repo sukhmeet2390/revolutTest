@@ -5,7 +5,6 @@ import banking.api.dto.response.PublicProfile;
 import banking.dao.domain.ProfileDO;
 
 public class ProfileMapper {
-
     public static ProfileDO profileDtoToDo(Profile dto) {
         return new ProfileDO(dto.id, dto.name, dto.email, dto.mobile);
     }

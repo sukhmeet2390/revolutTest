@@ -15,13 +15,11 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @Singleton
 public class ProfileDaoImpl implements ProfileDao {
-
     //short circuiting database here
     private Map<Long, ProfileDO> profileMap = new ConcurrentHashMap<>(1000);
     private Map<String, Long> emailMap = new HashMap<>(1000);
     private Map<Mobile, Long> mobileMap = new HashMap<>(1000);
     private AtomicLong counter = new AtomicLong(0);
-
 
     @Override
     public ProfileDO createUser(PublicProfile publicProfile) {

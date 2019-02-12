@@ -12,7 +12,7 @@ public class Transaction implements Response {
     public final Long from;
     public final Long to;
     public final Date date;
-    public final Double amount;//pretty printed for different locale
+    public final Double amount;
     public final TransactionType transactionType;
     public final Double balance;
 
