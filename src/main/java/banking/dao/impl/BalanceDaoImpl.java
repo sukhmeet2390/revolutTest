@@ -7,6 +7,7 @@ import banking.dao.BalanceDao;
 import banking.dao.domain.BalanceDO;
 import banking.dao.domain.TransactionDO;
 import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 
 import javax.inject.Singleton;
 import java.util.ArrayList;
@@ -107,7 +108,7 @@ public class BalanceDaoImpl implements BalanceDao {
     }
 
     @Override
-    public ImmutablePair<TransactionDO, TransactionDO> transferBalance(Profile fromUser, Profile toUser, Double amount) {
+    public Pair<TransactionDO, TransactionDO> transferBalance(Profile fromUser, Profile toUser, Double amount) {
         String transactionId = UUID.randomUUID().toString();
         Long now = System.nanoTime() / 1000;
         BalanceDO fromBalanceDO = getOrCreateBalance(fromUser);

@@ -3,6 +3,7 @@ package banking;
 
 import banking.api.controller.impl.AccountResourceImpl;
 import banking.api.controller.impl.ProfileResourceImpl;
+import banking.api.controller.impl.TransactionResourceImpl;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import io.dropwizard.Application;
@@ -16,17 +17,20 @@ public class BankingApplication extends Application<BankingConfiguration> {
 
     private final ProfileResourceImpl profileResource;
     private final AccountResourceImpl accountResource;
+    private final TransactionResourceImpl transactionResource;
 
     @Inject
-    public BankingApplication(ProfileResourceImpl profileResource, AccountResourceImpl accountResource) {
+    public BankingApplication(ProfileResourceImpl profileResource, AccountResourceImpl accountResource, TransactionResourceImpl transactionResource) {
         this.profileResource = profileResource;
         this.accountResource = accountResource;
+        this.transactionResource = transactionResource;
     }
 
     @Override
     public void run(BankingConfiguration bankingConfiguration, Environment environment) throws Exception {
         environment.jersey().register(profileResource);
         environment.jersey().register(accountResource);
+        environment.jersey().register(transactionResource);
     }
 
     public static void main(String[] args) throws Exception {

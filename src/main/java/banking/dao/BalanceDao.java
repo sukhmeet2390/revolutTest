@@ -3,7 +3,7 @@ package banking.dao;
 import banking.api.dto.response.Profile;
 import banking.dao.domain.BalanceDO;
 import banking.dao.domain.TransactionDO;
-import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public interface BalanceDao {
 
     TransactionDO deductBalance(Profile user, Double amount);
 
-    ImmutablePair<TransactionDO, TransactionDO> transferBalance(Profile fromUser, Profile toUser, Double amount);
+    Pair<TransactionDO, TransactionDO> transferBalance(Profile fromUser, Profile toUser, Double amount);
 
     void addTransaction(Profile user, TransactionDO transaction);
 }
