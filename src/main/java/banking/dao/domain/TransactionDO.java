@@ -14,19 +14,15 @@ public class TransactionDO {
     private Long to;
     private Long time;
     private Double amount;
-    private String currency;
-    private Double conversionRate;
     private TransactionType transactionType;
     private Double totalBalance;
 
-    public TransactionDO(String id, Long from, Long to, Long time, Double amount, String currency, Double conversionRate, TransactionType transactionType, Double totalBalance) {
+    public TransactionDO(String id, Long from, Long to, Long time, Double amount, TransactionType transactionType, Double totalBalance) {
         this.id = id;
         this.from = from;
         this.to = to;
         this.time = time;
         this.amount = amount;
-        this.currency = currency;
-        this.conversionRate = conversionRate;
         this.transactionType = transactionType;
         this.totalBalance = totalBalance;
     }

@@ -5,10 +5,12 @@ import banking.api.dto.request.CreateProfileRequest;
 import banking.api.dto.response.Profile;
 import banking.consumer.ProfileConsumer;
 import com.google.inject.Inject;
+import com.google.inject.Singleton;
 
 import javax.validation.Valid;
 import javax.ws.rs.core.Response;
 
+@Singleton
 public class ProfileResourceImpl implements ProfileResource {
     private final ProfileConsumer profileConsumer;
 

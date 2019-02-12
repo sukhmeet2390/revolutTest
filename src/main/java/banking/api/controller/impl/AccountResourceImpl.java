@@ -5,8 +5,10 @@ import banking.api.dto.request.GetStatementRequest;
 import banking.consumer.AccountConsumer;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 import javax.ws.rs.core.Response;
 
+@Singleton
 public class AccountResourceImpl implements AccountResource {
     private final AccountConsumer accountConsumer;
 
