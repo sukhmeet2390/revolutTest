@@ -7,11 +7,13 @@ import banking.dao.ProfileDao;
 import banking.dao.domain.ProfileDO;
 import banking.mappers.ProfileMapper;
 
+import javax.inject.Singleton;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
+@Singleton
 public class ProfileDaoImpl implements ProfileDao {
 
     //short circuiting database here

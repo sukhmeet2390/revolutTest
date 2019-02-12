@@ -2,10 +2,8 @@ package banking.consumer;
 
 import banking.api.dto.exception.NotFound;
 import banking.api.dto.exception.OperationNotAllowed;
-import banking.api.dto.response.Mobile;
 import banking.api.dto.response.Profile;
 import banking.api.dto.response.PublicProfile;
-import banking.dao.ProfileDao;
 import banking.dao.domain.ProfileDO;
 import banking.dao.impl.ProfileDaoImpl;
 import banking.mappers.ProfileMapper;
@@ -45,26 +43,7 @@ public class ProfileConsumer {
             throw new NotFound("User Id cannot be located! ");
         }
         Profile profile = ProfileMapper.profileDoToDto(privateProfile);
-        logger.info("Completed request to get user for id: {}", userId);
+        logger.info("Completed request to get user for id: {} / {}", userId, profile);
         return profile;
-    }
-
-    public Profile getUserByMobile(Mobile mobile) {
-        logger.info("Received request to get user for mobile: {}", mobile);
-        ProfileDO privateProfile = profileDao.getUserByMobile(mobile);
-        if (privateProfile == null) {
-            throw new NotFound("User Id cannot be located! ");
-        }
-        Profile profile = ProfileMapper.profileDoToDto(privateProfile);
-        logger.info("Completed request to get user for mobile: {}", mobile);
-        return profile;
-    }
-
-    public Profile getUserByEmail(String email) {
-        ProfileDO privateProfile = profileDao.getUserByEmail(email);
-        if (privateProfile == null) {
-            throw new NotFound("User Id cannot be located! ");
-        }
-        return ProfileMapper.profileDoToDto(privateProfile);
     }
 }

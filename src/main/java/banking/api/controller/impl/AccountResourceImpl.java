@@ -20,12 +20,12 @@ public class AccountResourceImpl implements AccountResource {
         GetStatementRequest request = new GetStatementRequest(startTime, endTime, count, id);
         request.validate();
         return Response.status(200)
-//                .entity(accountConsumer.getStatement(
-//                        request.id,
-//                        request.startTime,
-//                        request.endTime,
-//                        request.count
-//                ))
+                .entity(accountConsumer.getStatement(
+                        request.id,
+                        request.startTime,
+                        request.endTime,
+                        request.count
+                ))
                 .build();
     }
 

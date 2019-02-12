@@ -30,6 +30,7 @@ public class BankingApplication extends Application<BankingConfiguration> {
     }
 
     public static void main(String[] args) throws Exception {
+        System.setProperty("com.google.inject.internal.cglib.$experimental_asm7", "true");
         Injector injector = Guice.createInjector(new BankingModule());
         injector.getInstance(BankingApplication.class).run(args);
     }
