@@ -55,7 +55,7 @@ curl -X POST \
 }
 ```
 
-#GetProfile
+# GetProfile
 Get the profile of the created user specified from id which is returned in the response above. Ideally this should not take `id` instead an indentifier like `phone` or `email`.
 This is kept to keep things simple.
 
@@ -86,9 +86,10 @@ curl -X GET \
     }
 }
 ```
-#Account
 
-##getBalance
+# Account
+
+## getBalance
 
 Pass `id` of the profile returned after creating profile.
 **Request**
@@ -106,7 +107,7 @@ curl -X GET \
 
 ```
 
-##getStatement
+## getStatement
 
 Get statement is a paged API, with 3 parameters: `limit`, `startTime`, `endTime`. Response contains a pointer to next page information.
 The start-end time range is (inclusive, exclusive] in nature. `startTime` and `endTime` are computed using `System.nanoTime() / 1000`. In real world
@@ -154,11 +155,11 @@ curl -X GET \
 }
 ```
 
-#Transactions - Credit/Debit/Transfers
+# Transactions - Credit/Debit/Transfers
 Transactions rely on `id` of profile for transfer. This is just for simplicity and in real world this is not the case.
 Token is also added in API but is not used. `token` takes care of authorization.
 
-##Add transaction
+## Add transaction
 
 **Request**
 ```
@@ -180,7 +181,7 @@ curl -X POST \
 ```
 
 
-##Deduct transaction
+## Deduct transaction
 **Request**
 ```
 curl -X POST \
@@ -199,7 +200,7 @@ curl -X POST \
 }
 ```
 
-##Transfer
+## Transfer
 
 **Request**
 ```
