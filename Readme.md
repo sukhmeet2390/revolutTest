@@ -92,6 +92,7 @@ curl -X GET \
 ## getBalance
 
 Pass `id` of the profile returned after creating profile.
+
 **Request**
 ```
 
