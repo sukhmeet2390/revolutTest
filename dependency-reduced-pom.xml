@@ -95,7 +95,6 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
-  <reporting />
   <dependencyManagement>
     <dependencies>
       <dependency>
