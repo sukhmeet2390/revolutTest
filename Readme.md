@@ -1,5 +1,11 @@
 # banking
 
+## System requirements
+* JDK 
+* Maven 
+
+Rest of the dependecies are included using Maven. 
+
 Running the application
 ---
 1. Run `mvn clean install` to build your application
